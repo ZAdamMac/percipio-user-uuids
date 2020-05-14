@@ -114,7 +114,7 @@ def process_to_csv(namespace):
         ns.path_output = str(date.today()) + ".csv"
     print("Passing file to %s" % ns.path_output)
 
-    with open(ns.path_output, "w") as output_file:
+    with open(ns.path_output, "w", encoding="utf-8") as output_file:
         fields = ["externalUserId", "id", "email", "isActive",
                   "loginName", "firstName", "lastName", "role", "updatedAt"]
         writer = csv.DictWriter(output_file, fieldnames=fields, extrasaction="ignore")
